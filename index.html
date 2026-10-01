@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cavite Mutiny: Historical Perspectives Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="badge">IT-HIST 101</span>
+                <h2>Mutiny Dashboard</h2>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-item active" data-tab="overview">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+                    Overview & Intro
+                </button>
+                <button class="nav-item" data-tab="split-view">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    Split Comparison
+                </button>
+                <button class="nav-item" data-tab="matrix">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M4 5v14h16V5H4zm14 12H6V7h12v10z"/></svg>
+                    Comparative Matrix
+                </button>
+                <button class="nav-item" data-tab="simulator">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.03-.42 1.98-1.07 2.75z"/></svg>
+                    Source Analyzer
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Interactive IT Visualizer v2.4</p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header Bar -->
+            <header class="top-header">
+                <div class="header-title">
+                    <h1 id="page-title">Historical Overview</h1>
+                    <p id="page-subtitle">Examining the dual perspectives of the 1872 Cavite Mutiny</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn primary" id="toggle-theme-btn">Toggle Theme</button>
+                </div>
+            </header>
+
+            <!-- Dynamic Viewport -->
+            <div class="content-viewport">
+                
+                <!-- TAB 1: OVERVIEW -->
+                <section id="overview" class="tab-pane active">
+                    <div class="hero-card">
+                        <div class="hero-text">
+                            <span class="tag">Historical Context</span>
+                            <h2>The 1872 Cavite Mutiny</h2>
+                            <p>An uprising of Filipino military personnel and workers at the Spanish arsenal in Cavite on January 20, 1872. This watershed event served as a prelude to the Philippine Revolution, yet history recorded two starkly contrasting interpretations from the colonial rulers versus the native intellectuals.</p>
+                            <div class="stats-grid">
+                                <div class="stat-box">
+                                    <h3>Jan 20, 1872</h3>
+                                    <p>Date of Mutiny</p>
+                                </div>
+                                <div class="stat-box">
+                                    <h3>2 Perspectives</h3>
+                                    <p>Spanish vs. Filipino</p>
+                                </div>
+                                <div class="stat-box">
+                                    <h3>GOMBURZA</h3>
+                                    <p>Martyred Priests</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-visual">
+                            <div class="terminal-box">
+                                <div class="terminal-header">
+                                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                                    <span class="terminal-title">historian_query.sh</span>
+                                </div>
+                                <div class="terminal-body" id="terminal-output">
+                                    <p><span class="prompt">$</span> load sources --primary</p>
+                                    <p class="output-success">[OK] Loaded Montero y Vidal (Spanish Account)</p>
+                                    <p class="output-success">[OK] Loaded Pardo de Tavera (Filipino Account)</p>
+                                    <p><span class="prompt">$</span> analyze divergence --status</p>
+                                    <p class="output-highlight">Core conflict: Pre-planned Revolution vs. Localized Labor Strike.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB 2: SPLIT COMPARISON -->
+                <section id="split-view" class="tab-pane">
+                    <div class="split-container">
+                        <!-- Spanish Column -->
+                        <div class="perspective-card spanish-theme">
+                            <div class="card-header">
+                                <span class="badge red">Source A</span>
+                                <h3>The Spanish Account</h3>
+                                <p class="author">José Montero y Vidal & Gov.-Gen. Rafael Izquierdo</p>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>Nature:</strong> Grand, pre-planned conspiracy and full-scale revolution to overthrow Spanish sovereignty.</li>
+                                    <li><strong>Primary Causes:</strong> Instigation by native clergy, radical liberal books, and desires to establish a native kingdom.</li>
+                                    <li><strong>Role of GOMBURZA:</strong> Masterminds and ringleaders who used religion to incite the native masses and troops.</li>
+                                    <li><strong>Objective:</strong> Total expulsion of Spaniards and installation of a native "Hari".</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Filipino Column -->
+                        <div class="perspective-card filipino-theme">
+                            <div class="card-header">
+                                <span class="badge blue">Source B</span>
+                                <h3>The Filipino Account</h3>
+                                <p class="author">Dr. Trinidad Hermenegildo Pardo de Tavera</p>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>Nature:</strong> Localized, spontaneous mutiny by disgruntled arsenal workers and soldiers.</li>
+                                    <li><strong>Primary Causes:</strong> Sudden revocation of long-standing privileges (tribute and polo y servicio exemption) by Izquierdo.</li>
+                                    <li><strong>Role of GOMBURZA:</strong> Innocent victims; framed by friars and the government to silence secular reformists.</li>
+                                    <li><strong>Objective:</strong> A localized protest against administrative oppression rather than a separatist revolution.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB 3: COMPARATIVE MATRIX -->
+                <section id="matrix" class="tab-pane">
+                    <div class="table-card">
+                        <h3>Detailed Comparative Matrix</h3>
+                        <p class="section-desc">Click table rows to inspect technical breakdown parameters.</p>
+                        <div class="table-responsive">
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>Analytical Parameter</th>
+                                        <th>Spanish Perspective</th>
+                                        <th>Filipino Perspective</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="matrix-body">
+                                    <tr data-detail="Classified by Izquierdo as a nationwide revolt planned with Manila instigators.">
+                                        <td><strong>Scope of Uprising</strong></td>
+                                        <td>Nationwide revolution</td>
+                                        <td>Localized worker mutiny</td>
+                                    </tr>
+                                    <tr data-detail="Triggered by the removal of exemptions traditionally enjoyed by Cavite arsenal workers.">
+                                        <td><strong>Immediate Catalyst</strong></td>
+                                        <td>Abolition of native privileges + Liberal agitators</td>
+                                        <td>Abolition of tribute/forced labor exemptions</td>
+                                    </tr>
+                                    <tr data-detail="Spanish authorities blamed native priests for orchestrating the anti-friar movement.">
+                                        <td><strong>Clergy Involvement</strong></td>
+                                        <td>Active masterminds & conspirators</td>
+                                        <td>Scapegoats targeted by reactionary friars</td>
+                                    </tr>
+                                    <tr data-detail="Execution of GOMBURZA intended to suppress nationalism backfired and fueled the propaganda movement.">
+                                        <td><strong>Aftermath & Impact</strong></td>
+                                        <td>Justified martial law and stricter colonial control</td>
+                                        <td>Sparked national consciousness leading to 1896</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="matrix-detail-box" class="detail-box">
+                            <p><strong>Inspector Note:</strong> Select any table row above to load granular historical context logs.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB 4: SIMULATOR / ANALYZER -->
+                <section id="simulator" class="tab-pane">
+                    <div class="simulator-card">
+                        <h3>Interactive Source Divergence Analyzer</h3>
+                        <p>Adjust the slider to simulate how different political lenses interpret the root cause of the Cavite Mutiny.</p>
+                        
+                        <div class="slider-control">
+                            <label for="lens-slider">Political Lens Alignment:</label>
+                            <input type="range" id="lens-slider" min="0" max="100" value="50">
+                            <div class="slider-labels">
+                                <span>100% Spanish Official View</span>
+                                <span>Balanced / Neutral</span>
+                                <span>100% Filipino Reform View</span>
+                            </div>
+                        </div>
+
+                        <div class="simulation-output-box" id="sim-output">
+                            <h4>Current Analysis Mode: Neutral Synthesis</h4>
+                            <p>The mutiny is currently viewed through a mixed lens: combining administrative policy overreach (labor grievance) with pre-existing political tensions stoked by secularization debates.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
